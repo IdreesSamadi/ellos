@@ -7,13 +7,13 @@ export const state = () => ({
   pagination: {},
   loading: 0,
   toastMessages: {},
-  product: {}
+  product: {},
+  wishlist: []
 })
 
 export const getters = {
-  getProductById: state => (id) => {
-    return state.products.find(product => product.id === id)
-  }
+  getProductById: state => id =>
+    state.products.find(product => product.id === id)
 }
 
 export const mutations = {
@@ -25,19 +25,19 @@ export const mutations = {
     console.log('mutation', state.products)
     return state.products
   },
-  set_pagination: (state, payload) => {
-    console.log(payload)
-    return (state.pagination = payload)
-  }
+  set_pagination: (state, payload) => (state.pagination = payload),
+  set_wishlist: (state, payload) => state.wishlist.push(payload),
+  remove_wishlistItem: (state, payload) =>
+    (state.wishlist = state.wishlist.filter(item => item.id !== payload))
 }
 export const actions = {
   productData: async ({ state, commit }, payload) => {
-    // state.loading++
+    state.loading++
     await commit('set_product_list_data', data.data.getProductListPage)
     await commit('set_products', data.data.getProductListPage.articles)
     console.log('ProductData')
     // await commit('set_pagination', data.data.getProductListPage.pagination[0])
-    // state.loading--
+    state.loading--
   },
   moreProduct: async ({ state, commit }) => {
     const product = await Api.get(

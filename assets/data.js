@@ -39,21 +39,21 @@ export const data = {
               __typename: 'SkuData',
               sku: '7011128-01-07',
               size: '86/92',
-              inStock: true,
+              inStock: false,
               stockType: 0
             },
             {
               __typename: 'SkuData',
               sku: '7011128-01-11',
               size: '98/104',
-              inStock: true,
+              inStock: false,
               stockType: 0
             },
             {
               __typename: 'SkuData',
               sku: '7011128-01-15',
               size: '110/116',
-              inStock: true,
+              inStock: false,
               stockType: 0
             },
             {
