@@ -1,0 +1,53 @@
+.hero {
+  background: url('../assets/shop.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+.hero-title {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+.hero-title h1 {
+  font-size: 4rem;
+  font-family: 'Dancing', cursive;
+  color: var(--dark-red) !important;
+}
+.intro {
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+.intro-text {
+  font-size: 3rem;
+  color: white;
+  font-family: 'Heebo', sans-serif;
+}
+
+.slider {
+  background: rgb(26, 178, 253);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  z-index: 21;
+}
+
+.hide {
+  background: black;
+  overflow: hidden;
+}
+
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
+}

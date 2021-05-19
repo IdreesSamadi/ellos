@@ -119,6 +119,6 @@ export const actions = {
     // commit('set_products', product)
   },
   toast: ({ commit }, payload) => {
-    // commit('add_toast_data', payload)
+    commit('add_toast_data', payload)
   }
 }

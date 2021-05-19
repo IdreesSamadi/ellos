@@ -2,17 +2,15 @@
   <b-card style="max-width: 20rem;" class="m-3 overflow-hidden">
     <nuxt-link :to="'products/' + product.id">
       <div class="position-relative">
-        <transition>
-          <b-card-img
-            class="card-item-img"
-            :src="
-              'https://assets.ellosgroup.com/i/ellos/b?$eg$&$em$&$ep$&$el$&n=' +
-                product.imageFront
-            "
-            :alt="product.name"
-            top
-          />
-        </transition>
+        <b-card-img
+          class="card-item-img"
+          :src="
+            'https://assets.ellosgroup.com/i/ellos/b?$eg$&$em$&$ep$&$el$&n=' +
+              product.imageFront
+          "
+          :alt="product.name"
+          top
+        />
         <div class="card-badge">
           <b-img
             v-for="lable in product.labels"
@@ -37,7 +35,9 @@
         <span class="small price-text-org"
           >{{ product.originalPriceFmt }} SEK
         </span>
-        <span class="small text-danger"> -{{ product.priceDiscount }}% </span>
+        <span class="small text-danger"
+          >&nbsp;&nbsp;-{{ product.priceDiscount }}%
+        </span>
       </b-card-text>
       <b-card-text v-else>
         <span class="text-danger curPrice"
@@ -54,7 +54,7 @@ export default {
     product: {
       type: Object,
       default: () => {
-        return { message: 'hello' }
+        return {}
       }
     }
   }
