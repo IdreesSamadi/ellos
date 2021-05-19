@@ -42,15 +42,17 @@ export default {
     ...mapActions(['moreProduct'])
   },
   head() {
-    return {
-      title: this.productListPage.category.pageTitle,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.productListPage.category.pageDescription
-        }
-      ]
+    if (this.productListPage.category) {
+      return {
+        title: this.productListPage.category.pageTitle,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.productListPage.category.pageDescription
+          }
+        ]
+      }
     }
   }
 }
