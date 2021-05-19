@@ -31,6 +31,8 @@ $ npm run generate
 - scss
 - gsap
 
+---
+
 ### Note
 
 When running this application one may face with [Cross-origin resource sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) problem. There are many ways to solve this here two of them is mentioned:
