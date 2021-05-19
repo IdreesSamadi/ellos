@@ -1,6 +1,5 @@
 {
   "name": "ellos-app",
-  "proxy": "91.208.174.101:443",
   "version": "1.0.0",
   "private": true,
   "scripts": {

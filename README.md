@@ -3,6 +3,12 @@
 ## Build Setup
 
 ```bash
+# clone repository
+$ git clone git@github.com:IdreesSamadi/ellos.git
+
+# change to directory
+$ cd ellos
+
 # install dependencies
 $ npm install
 
@@ -17,4 +23,10 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Dependencies
+
+- Nuxt
+- Vue
+- bootwatch
+- scss
+- gsap
