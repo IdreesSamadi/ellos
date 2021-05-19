@@ -48,7 +48,7 @@ export default {
   },
   head() {
     return {
-      title: 'Wellcome',
+      title: 'Welcome',
       meta: [
         {
           hid: 'description',

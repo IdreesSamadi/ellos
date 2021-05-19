@@ -23,7 +23,7 @@
             <b-list-group-item
               ><h3>{{ product.name }}</h3></b-list-group-item
             >
-            <b-list-group-item>{{ product.subBrand }}</b-list-group-item>
+            <b-list-group-item>Brand: {{ product.subBrand }}</b-list-group-item>
             <b-list-group-item v-if="product.priceDiscount !== '0'">
               <span class="text-danger curPrice">
                 {{ product.currentPriceFmt }} SEK
@@ -119,6 +119,18 @@ export default {
     addToWishlist(product) {
       this.set_wishlist(product)
       this.$router.push('/wishlist')
+    }
+  },
+  head() {
+    return {
+      title: this.product.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.product.nameSeo} ${this.product.subBrandSeo}`
+        }
+      ]
     }
   }
 }

@@ -2,29 +2,10 @@
   <div>
     <Navbar />
     <b-container>
-      <nuxt-link class="btn btn-light my-4" to="/">
+      <nuxt-link class="btn btn-light my-2" to="/">
         Go Home
       </nuxt-link>
-      <b-row>
-        <b-col>
-          <h1 class="my-2">Latest Products</h1>
-        </b-col>
-        <b-col lg="3">
-          <b-form-select v-model="selected" :value="sort" class="mb-3">
-            <template #first>
-              <b-form-select-option :value="null" disabled
-                >Sort Products</b-form-select-option
-              >
-            </template>
-            <b-form-select-option
-              v-for="option in productListPage.sort"
-              :key="option.label"
-              :value="option.value"
-              >{{ option.label }}
-            </b-form-select-option>
-          </b-form-select>
-        </b-col>
-      </b-row>
+      <h1 class="my-1">Latest Products</h1>
       <b-Row align-h="center">
         <b-Col
           v-for="product in products"
@@ -51,19 +32,26 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 export default {
-  data() {
-    return {
-      selected: null
-    }
-  },
   computed: {
-    ...mapState(['productListPage', 'products', 'sort'])
+    ...mapState(['productListPage', 'products'])
   },
   created() {
     this.$store.dispatch('productData')
   },
   methods: {
     ...mapActions(['moreProduct'])
+  },
+  head() {
+    return {
+      title: this.productListPage.category.pageTitle,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.productListPage.category.pageDescription
+        }
+      ]
+    }
   }
 }
 </script>

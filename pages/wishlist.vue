@@ -2,10 +2,11 @@
   <div>
     <Navbar />
     <b-container>
-      <nuxt-link class="btn btn-light my-4" to="/">
+      <nuxt-link class="btn btn-light my-2" to="/">
         Go Home
       </nuxt-link>
-      <h1>Shopping Cart</h1>
+      <h1>Wishlist</h1>
+      <b-alert :show="wishlist.length === 0">Your Wish List is Empty</b-alert>
       <b-list-group>
         <b-list-group-item v-for="item in wishlist" :key="item.id">
           <b-row align-content="center" align-h="center" align-v="center">
@@ -52,6 +53,18 @@ export default {
   },
   methods: {
     ...mapMutations(['remove_wishlistItem'])
+  },
+  head() {
+    return {
+      title: 'Wish List',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'place to checkout all your favorite items'
+        }
+      ]
+    }
   }
 }
 </script>

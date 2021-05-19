@@ -20,5 +20,6 @@
   font-family: 'Lobster', cursive;
   font-weight: lighter;
   font-size: 2rem;
+  padding: 0;
 }
 </style>

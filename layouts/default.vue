@@ -5,6 +5,24 @@
   </div>
 </template>
 
+<script>
+export default {
+  created() {
+    this.$store.watch(
+      state => state.toastMessages,
+      toastMessages => {
+        this.$bvToast.toast(toastMessages.message, {
+          title: `${toastMessages.type.toUpperCase()} !`,
+          autoHideDelay: 3000,
+          toaster: 'b-toaster-top-center',
+          variant: toastMessages.variant
+        })
+      }
+    )
+  }
+}
+</script>
+
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

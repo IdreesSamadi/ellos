@@ -2,7 +2,7 @@
   <b-card style="max-width: 20rem;" class="m-3 overflow-hidden">
     <nuxt-link :to="'products/' + product.id">
       <div class="position-relative">
-        <b-card-img
+        <b-card-img-lazy
           class="card-item-img"
           :src="
             'https://assets.ellosgroup.com/i/ellos/b?$eg$&$em$&$ep$&$el$&n=' +
