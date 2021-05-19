@@ -5,7 +5,7 @@ export const state = () => ({
   products: [],
   productListPage: {},
   pagination: {},
-  loading: 0,
+  loading: false,
   toastMessages: {},
   product: {},
   wishlist: []
@@ -18,6 +18,7 @@ export const getters = {
 
 export const mutations = {
   add_toast_data: (state, toastMessage) => (state.toastMessages = toastMessage),
+  set_loader: state => (state.loading = !state.loading),
   set_product_list_data: (state, payload) =>
     (state.productListPage = { ...state.productListPage, ...payload }),
   set_products: (state, payload) => {
@@ -32,12 +33,11 @@ export const mutations = {
 }
 export const actions = {
   productData: async ({ state, commit }, payload) => {
-    state.loading++
+    commit('set_loader')
     await commit('set_product_list_data', data.data.getProductListPage)
     await commit('set_products', data.data.getProductListPage.articles)
-    console.log('ProductData')
     // await commit('set_pagination', data.data.getProductListPage.pagination[0])
-    state.loading--
+    commit('set_loader')
   },
   moreProduct: async ({ state, commit }) => {
     const product = await Api.get(
