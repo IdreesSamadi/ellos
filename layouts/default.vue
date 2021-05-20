@@ -19,6 +19,10 @@ export default {
         })
       }
     )
+  },
+  errorCaptured(err, vm, info) {
+    console.log(err)
+    return false
   }
 }
 </script>

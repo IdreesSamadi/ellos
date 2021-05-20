@@ -9,7 +9,7 @@
       <b-Row align-h="center">
         <b-Col
           v-for="product in products"
-          :key="product.id"
+          :key="product.id + Math.random()"
           sm="{12}"
           md="{6}"
           lg="{4}"
